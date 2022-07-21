@@ -1,3 +1,3 @@
 # VCF_filter
 
-Resources for VCF filtering (pulled via Docker).
+Resources for VCF filtering on Terra.
