@@ -35,6 +35,10 @@ RUN ln -s $BCFTOOLS_INSTALL_DIR/bin/bcftools /usr/bin/bcftools && \
 
 #####
 
+RUN wget https://raw.githubusercontent.com/pj-sullivan/VCF_filter/main/VCF_filter.sh
+RUN chmod +x VCF_filter.sh
+
 RUN wget https://raw.githubusercontent.com/pj-sullivan/VCF_filter/main/gencode.v41.annotation.proteincoding.gtf.bed.gz
 RUN wget https://raw.githubusercontent.com/pj-sullivan/VCF_filter/main/gencode.v41.annotation.proteincoding.omim.gtf.bed.gz
 RUN wget https://raw.githubusercontent.com/pj-sullivan/VCF_filter/main/gencode.v41.annotation.omim.gtf.bed.gz
+RUN wget https://raw.githubusercontent.com/pj-sullivan/VCF_filter/main/gencode.v41.annotation.gtf.bed.gz
