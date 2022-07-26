@@ -29,7 +29,7 @@ if [ ! -z $metadata ]; then
     unaffected_lines=($(grep -wn -f unaffected.txt samples.txt | cut -f1 -d':')) # unaffected
     affected_lines=($(grep -wn -f affected.txt samples.txt | cut -f1 -d':')) # affected
 
-    query="AF<=$allele_frequency && (QUAL>=$min_QUAL || QUAL='.') && MAX(FORMAT/DP[*])>=$min_depth && MAX(FORMAT/AD[*:1])>=$min_altReads && "
+    query="AF<=$allele_frequency && (QUAL>=$min_QUAL || QUAL='.') && FILTER=='PASS' && MAX(FORMAT/DP[*])>=$min_depth && MAX(FORMAT/AD[*:1])>=$min_altReads && "
     for i in ${unaffected_lines[@]}; do
         index=$(($i-1))
         query+="FORMAT/GT[$index]!='1/1' && "
